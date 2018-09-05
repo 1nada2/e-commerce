@@ -1,4 +1,4 @@
-package com.Whitecape.e_commerce.security;
+/*package com.Whitecape.e_commerce.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,3 +17,4 @@ class SessionConfig {
         return resolver;
     }
 }
+*/

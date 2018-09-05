@@ -35,11 +35,11 @@ public class Basket {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id ;
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	/*@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "provider_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @JsonIgnore
-    private Provider provider;
+    @JsonIgnore*/
+    //private Provider provider;
 	@ManyToMany(fetch = FetchType.LAZY,
             cascade = {
                 CascadeType.PERSIST,
@@ -49,7 +49,7 @@ public class Basket {
             joinColumns = { @JoinColumn(name = "basket_id") },
             inverseJoinColumns = { @JoinColumn(name = "product_id") })
     private Set<Product> products = new HashSet<>();
-	@OneToOne(fetch = FetchType.LAZY, optional = false)
+	/*@OneToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    private User user;*/
 }

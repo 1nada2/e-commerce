@@ -1,4 +1,4 @@
-package com.Whitecape.e_commerce.repository;
+/*package com.Whitecape.e_commerce.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
@@ -10,3 +10,4 @@ import com.Whitecape.e_commerce.model.Provider;
 public interface ProviderRepository extends JpaRepository<Provider, Long>{
 
 }
+*/

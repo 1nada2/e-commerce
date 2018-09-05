@@ -15,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -31,6 +32,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+
 
 @Entity
 @Table(name="products")
@@ -55,11 +57,11 @@ public class Product {
 	@NotNull
     @Column
 	private float price;
-	@NotNull
-    @Column
-	private URL image;
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "category_id", nullable = false)
+	@Lob
+    @Column(name="product_IMAGE", nullable=false, columnDefinition="mediumblob")
+    private byte[] image;
+	@ManyToOne(fetch = FetchType.LAZY, optional = true)
+    @JoinColumn(name = "category_id" )
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Category category;
@@ -74,6 +76,7 @@ public class Product {
             },
             mappedBy = "products")
     private Set<Basket> baskets = new HashSet<>();
+
 	
 	
 

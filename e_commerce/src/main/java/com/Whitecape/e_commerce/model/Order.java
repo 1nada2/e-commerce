@@ -42,11 +42,11 @@ public class Order {
             fetch = FetchType.LAZY,
             mappedBy = "order")
     private Set<OrderItem> orderItemS = new HashSet<>();
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	/*@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
-    private User user;
+    private User user;*/
 	@ManyToMany(fetch = FetchType.LAZY,
             cascade = {
                 CascadeType.PERSIST,
